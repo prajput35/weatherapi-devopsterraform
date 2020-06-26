@@ -43,7 +43,7 @@ stages:
           set -e
 
           terraform init -input=false
-          terraform plan -output=false
+          
           terraforn apply -input=false -auto-approve
         name: 'RunTerraform'
         displayName: 'Run Terraform'
