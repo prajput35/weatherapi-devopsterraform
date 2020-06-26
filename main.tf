@@ -4,6 +4,15 @@ provider azurerm{
     features {}
 }
 
+terraform {
+    backend "azurerm" {
+        resource_group_name     = "tfjapaneast"
+        storage_account_name    = "tfstorageparas"
+        container_name          = "tfstate"
+        key                     = "terraform.tfstate"
+    }
+}
+
 //create resource group
 resource "azurerm_resource_group" "tf_test" {
     name="tfmainrg"
